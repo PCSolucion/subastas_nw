@@ -1,6 +1,4 @@
-
-# Voy a crear la versión final con todas las mejoras solicitadas
-html_final = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +10,7 @@ html_final = '''<!DOCTYPE html>
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --primary: #9147ff;
             --primary-dark: #772ce8;
@@ -26,7 +24,7 @@ html_final = '''<!DOCTYPE html>
             --danger: #ff4444;
             --border: #2c2c35;
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: var(--bg-dark);
@@ -34,7 +32,7 @@ html_final = '''<!DOCTYPE html>
             min-height: 100vh;
             line-height: 1.6;
         }
-        
+
         /* Header */
         .header {
             background: var(--secondary);
@@ -47,19 +45,19 @@ html_final = '''<!DOCTYPE html>
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .header h1 {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
         }
-        
+
         .header-actions {
             display: flex;
             gap: 0.75rem;
             align-items: center;
         }
-        
+
         .connection-status {
             display: flex;
             align-items: center;
@@ -69,24 +67,24 @@ html_final = '''<!DOCTYPE html>
             font-size: 0.875rem;
             background: var(--bg-card);
         }
-        
+
         .status-dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
             background: var(--text-muted);
         }
-        
+
         .status-dot.connected {
             background: var(--success);
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
         }
-        
+
         /* Buttons */
         .btn {
             padding: 0.625rem 1.25rem;
@@ -100,35 +98,35 @@ html_final = '''<!DOCTYPE html>
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .btn-primary {
             background: var(--primary);
             color: white;
         }
-        
+
         .btn-primary:hover {
             background: var(--primary-dark);
         }
-        
+
         .btn-secondary {
             background: var(--bg-card);
             color: var(--text);
             border: 1px solid var(--border);
         }
-        
+
         .btn-secondary:hover {
             background: var(--border);
         }
-        
+
         .btn-danger {
             background: var(--danger);
             color: white;
         }
-        
+
         .btn-danger:hover {
             opacity: 0.9;
         }
-        
+
         /* Main Layout */
         .main-container {
             display: grid;
@@ -138,17 +136,17 @@ html_final = '''<!DOCTYPE html>
             max-width: 1600px;
             margin: 0 auto;
         }
-        
+
         @media (max-width: 1200px) {
             .main-container {
                 grid-template-columns: 1fr;
             }
-            
+
             .sidebar {
                 order: -1;
             }
         }
-        
+
         /* Cards */
         .card {
             background: var(--bg-card);
@@ -157,7 +155,7 @@ html_final = '''<!DOCTYPE html>
             padding: 1.5rem;
             margin-bottom: 1.5rem;
         }
-        
+
         .card-header {
             display: flex;
             justify-content: space-between;
@@ -166,13 +164,13 @@ html_final = '''<!DOCTYPE html>
             padding-bottom: 1rem;
             border-bottom: 1px solid var(--border);
         }
-        
+
         .card-title {
             font-size: 1.125rem;
             font-weight: 600;
             color: var(--text);
         }
-        
+
         /* Active Auction */
         .active-auction {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
@@ -180,7 +178,7 @@ html_final = '''<!DOCTYPE html>
             position: relative;
             overflow: hidden;
         }
-        
+
         .active-auction::before {
             content: '';
             position: absolute;
@@ -193,12 +191,12 @@ html_final = '''<!DOCTYPE html>
             animation: border-animation 3s linear infinite;
             border-radius: 8px;
         }
-        
+
         @keyframes border-animation {
             0% { filter: hue-rotate(0deg); }
             100% { filter: hue-rotate(360deg); }
         }
-        
+
         .auction-badge {
             position: absolute;
             top: 1rem;
@@ -213,21 +211,21 @@ html_final = '''<!DOCTYPE html>
             letter-spacing: 0.5px;
             z-index: 10;
         }
-        
+
         .auction-title {
             font-size: 1.75rem;
             font-weight: 700;
             margin-bottom: 1rem;
             padding-right: 6rem;
         }
-        
+
         /* Auction Images Gallery */
         .auction-images {
             margin-bottom: 1.5rem;
             border-radius: 8px;
             overflow: hidden;
         }
-        
+
         .auction-main-image {
             width: 100%;
             max-height: 300px;
@@ -236,7 +234,7 @@ html_final = '''<!DOCTYPE html>
             border-radius: 8px;
             display: block;
         }
-        
+
         .auction-thumbnails {
             display: flex;
             gap: 0.5rem;
@@ -244,21 +242,21 @@ html_final = '''<!DOCTYPE html>
             overflow-x: auto;
             padding: 0.25rem 0;
         }
-        
+
         .auction-thumbnails::-webkit-scrollbar {
             height: 6px;
         }
-        
+
         .auction-thumbnails::-webkit-scrollbar-track {
             background: rgba(0, 0, 0, 0.2);
             border-radius: 3px;
         }
-        
+
         .auction-thumbnails::-webkit-scrollbar-thumb {
             background: var(--primary);
             border-radius: 3px;
         }
-        
+
         .thumbnail {
             flex-shrink: 0;
             width: 80px;
@@ -269,16 +267,16 @@ html_final = '''<!DOCTYPE html>
             border: 2px solid transparent;
             transition: all 0.2s;
         }
-        
+
         .thumbnail:hover {
             border-color: var(--primary);
             transform: scale(1.05);
         }
-        
+
         .thumbnail.active {
             border-color: #ffeb3b;
         }
-        
+
         .auction-timer {
             font-size: 2.5rem;
             font-weight: 700;
@@ -290,36 +288,36 @@ html_final = '''<!DOCTYPE html>
             font-family: 'Courier New', monospace;
             color: #ffeb3b;
         }
-        
+
         .auction-timer.warning {
             color: var(--warning);
             animation: timer-warning 1s infinite;
         }
-        
+
         @keyframes timer-warning {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-        
+
         .current-bid {
             text-align: center;
             margin-bottom: 1.5rem;
         }
-        
+
         .bid-amount {
             font-size: 3rem;
             font-weight: 800;
             color: #ffeb3b;
             text-shadow: 0 2px 10px rgba(255, 235, 59, 0.3);
         }
-        
+
         .bid-label {
             font-size: 0.875rem;
             color: rgba(255, 255, 255, 0.7);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
+
         .bid-winner {
             text-align: center;
             font-size: 1.25rem;
@@ -327,22 +325,22 @@ html_final = '''<!DOCTYPE html>
             background: rgba(0, 0, 0, 0.3);
             border-radius: 8px;
         }
-        
+
         .winner-name {
             font-weight: 700;
             color: #ffeb3b;
         }
-        
+
         .auction-actions {
             display: flex;
             gap: 0.75rem;
             margin-top: 1.5rem;
         }
-        
+
         .auction-actions .btn {
             flex: 1;
         }
-        
+
         /* Activity Log - LOGS ARRIBA */
         .activity-log {
             background: var(--bg-card);
@@ -352,7 +350,7 @@ html_final = '''<!DOCTYPE html>
             display: flex;
             flex-direction: column;
         }
-        
+
         .log-header {
             padding: 1rem 1.5rem;
             border-bottom: 1px solid var(--border);
@@ -360,7 +358,7 @@ html_final = '''<!DOCTYPE html>
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .log-content {
             flex: 1;
             overflow-y: auto;
@@ -368,24 +366,24 @@ html_final = '''<!DOCTYPE html>
             display: flex;
             flex-direction: column; /* CAMBIADO: ya no es column-reverse */
         }
-        
+
         .log-content::-webkit-scrollbar {
             width: 8px;
         }
-        
+
         .log-content::-webkit-scrollbar-track {
             background: var(--secondary);
         }
-        
+
         .log-content::-webkit-scrollbar-thumb {
             background: var(--border);
             border-radius: 4px;
         }
-        
+
         .log-content::-webkit-scrollbar-thumb:hover {
             background: var(--primary);
         }
-        
+
         .log-entry {
             padding: 0.75rem;
             margin-bottom: 0.5rem;
@@ -395,7 +393,7 @@ html_final = '''<!DOCTYPE html>
             font-size: 0.875rem;
             animation: slideIn 0.3s ease-out;
         }
-        
+
         @keyframes slideIn {
             from {
                 opacity: 0;
@@ -406,51 +404,51 @@ html_final = '''<!DOCTYPE html>
                 transform: translateY(0);
             }
         }
-        
+
         .log-entry.bid {
             border-left-color: var(--primary);
         }
-        
+
         .log-entry.system {
             border-left-color: var(--text-muted);
         }
-        
+
         .log-entry.winner {
             border-left-color: var(--success);
             background: rgba(0, 200, 83, 0.1);
         }
-        
+
         .log-time {
             color: var(--text-muted);
             font-size: 0.75rem;
             margin-right: 0.5rem;
         }
-        
+
         .log-user {
             color: var(--primary);
             font-weight: 600;
         }
-        
+
         /* Stats */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1rem;
         }
-        
+
         .stat-card {
             background: var(--secondary);
             padding: 1rem;
             border-radius: 6px;
             text-align: center;
         }
-        
+
         .stat-value {
             font-size: 2rem;
             font-weight: 700;
             color: var(--primary);
         }
-        
+
         .stat-label {
             font-size: 0.75rem;
             color: var(--text-muted);
@@ -458,12 +456,12 @@ html_final = '''<!DOCTYPE html>
             letter-spacing: 0.5px;
             margin-top: 0.25rem;
         }
-        
+
         /* Config Section */
         .config-group {
             margin-bottom: 1.5rem;
         }
-        
+
         .config-label {
             display: block;
             font-size: 0.875rem;
@@ -471,21 +469,21 @@ html_final = '''<!DOCTYPE html>
             margin-bottom: 0.5rem;
             color: var(--text);
         }
-        
+
         .checkbox-wrapper {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 0.75rem;
         }
-        
+
         input[type="checkbox"] {
             width: 18px;
             height: 18px;
             accent-color: var(--primary);
             cursor: pointer;
         }
-        
+
         input[type="number"],
         input[type="text"],
         textarea {
@@ -497,13 +495,13 @@ html_final = '''<!DOCTYPE html>
             color: var(--text);
             font-size: 0.875rem;
         }
-        
+
         input:focus,
         textarea:focus {
             outline: none;
             border-color: var(--primary);
         }
-        
+
         /* History */
         .history-item {
             background: var(--secondary);
@@ -512,26 +510,26 @@ html_final = '''<!DOCTYPE html>
             margin-bottom: 0.75rem;
             border-left: 3px solid var(--primary);
         }
-        
+
         .history-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 0.75rem;
         }
-        
+
         .history-title {
             font-weight: 600;
             font-size: 1.125rem;
             color: var(--text);
         }
-        
+
         .history-amount {
             font-weight: 700;
             font-size: 1.25rem;
             color: var(--primary);
         }
-        
+
         .history-details {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -540,36 +538,36 @@ html_final = '''<!DOCTYPE html>
             padding-top: 0.75rem;
             border-top: 1px solid var(--border);
         }
-        
+
         .history-detail {
             display: flex;
             flex-direction: column;
         }
-        
+
         .detail-label {
             font-size: 0.75rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         .detail-value {
             font-size: 0.95rem;
             font-weight: 600;
             color: var(--text);
             margin-top: 0.25rem;
         }
-        
+
         .history-winner {
             font-size: 0.875rem;
             color: var(--text-muted);
             margin-bottom: 0.5rem;
         }
-        
+
         .history-winner strong {
             color: var(--success);
         }
-        
+
         /* User Stats Card */
         .user-stats-card {
             background: var(--secondary);
@@ -578,20 +576,20 @@ html_final = '''<!DOCTYPE html>
             margin-bottom: 0.75rem;
             border-left: 3px solid var(--success);
         }
-        
+
         .user-stats-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1rem;
         }
-        
+
         .user-stats-name {
             font-size: 1.25rem;
             font-weight: 700;
             color: var(--success);
         }
-        
+
         .user-stats-badge {
             background: var(--primary);
             color: white;
@@ -600,24 +598,24 @@ html_final = '''<!DOCTYPE html>
             font-size: 0.75rem;
             font-weight: 600;
         }
-        
+
         .user-stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             gap: 0.75rem;
         }
-        
+
         /* Leaderboard Table */
         .leaderboard-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 1rem;
         }
-        
+
         .leaderboard-table thead {
             background: var(--secondary);
         }
-        
+
         .leaderboard-table th {
             padding: 0.75rem;
             text-align: left;
@@ -628,46 +626,46 @@ html_final = '''<!DOCTYPE html>
             letter-spacing: 0.5px;
             border-bottom: 2px solid var(--border);
         }
-        
+
         .leaderboard-table td {
             padding: 0.875rem 0.75rem;
             border-bottom: 1px solid var(--border);
             font-size: 0.875rem;
         }
-        
+
         .leaderboard-table tbody tr:hover {
             background: var(--secondary);
         }
-        
+
         .leaderboard-rank {
             font-weight: 700;
             color: var(--primary);
             width: 60px;
         }
-        
+
         .leaderboard-rank.gold {
             color: #ffd700;
         }
-        
+
         .leaderboard-rank.silver {
             color: #c0c0c0;
         }
-        
+
         .leaderboard-rank.bronze {
             color: #cd7f32;
         }
-        
+
         .leaderboard-username {
             font-weight: 600;
             color: var(--text);
         }
-        
+
         .leaderboard-value {
             font-weight: 700;
             color: var(--primary);
             text-align: right;
         }
-        
+
         /* Modal */
         .modal {
             display: none;
@@ -682,11 +680,11 @@ html_final = '''<!DOCTYPE html>
             justify-content: center;
             padding: 1rem;
         }
-        
+
         .modal.active {
             display: flex;
         }
-        
+
         .modal-content {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -696,7 +694,7 @@ html_final = '''<!DOCTYPE html>
             max-height: 90vh;
             overflow-y: auto;
         }
-        
+
         .modal-header {
             padding: 1.5rem;
             border-bottom: 1px solid var(--border);
@@ -704,12 +702,12 @@ html_final = '''<!DOCTYPE html>
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .modal-title {
             font-size: 1.25rem;
             font-weight: 600;
         }
-        
+
         .modal-close {
             background: none;
             border: none;
@@ -724,19 +722,19 @@ html_final = '''<!DOCTYPE html>
             justify-content: center;
             border-radius: 4px;
         }
-        
+
         .modal-close:hover {
             background: var(--secondary);
         }
-        
+
         .modal-body {
             padding: 1.5rem;
         }
-        
+
         .form-group {
             margin-bottom: 1.25rem;
         }
-        
+
         .form-label {
             display: block;
             font-size: 0.875rem;
@@ -744,14 +742,14 @@ html_final = '''<!DOCTYPE html>
             margin-bottom: 0.5rem;
             color: var(--text);
         }
-        
+
         .image-preview-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             gap: 0.5rem;
             margin-top: 0.75rem;
         }
-        
+
         .image-preview {
             position: relative;
             aspect-ratio: 1;
@@ -759,13 +757,13 @@ html_final = '''<!DOCTYPE html>
             overflow: hidden;
             border: 2px solid var(--border);
         }
-        
+
         .image-preview img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .image-remove {
             position: absolute;
             top: 4px;
@@ -782,7 +780,7 @@ html_final = '''<!DOCTYPE html>
             align-items: center;
             justify-content: center;
         }
-        
+
         /* Auction Cards in Config */
         .auction-card {
             background: var(--secondary);
@@ -794,40 +792,40 @@ html_final = '''<!DOCTYPE html>
             align-items: center;
             border: 1px solid var(--border);
         }
-        
+
         .auction-info h4 {
             font-size: 1rem;
             margin-bottom: 0.25rem;
         }
-        
+
         .auction-info p {
             font-size: 0.75rem;
             color: var(--text-muted);
         }
-        
+
         .auction-card-actions {
             display: flex;
             gap: 0.5rem;
         }
-        
+
         .btn-sm {
             padding: 0.375rem 0.75rem;
             font-size: 0.75rem;
         }
-        
+
         /* Empty States */
         .empty-state {
             text-align: center;
             padding: 3rem 1rem;
             color: var(--text-muted);
         }
-        
+
         .empty-state-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
             opacity: 0.5;
         }
-        
+
         /* Tabs */
         .tabs {
             display: flex;
@@ -835,7 +833,7 @@ html_final = '''<!DOCTYPE html>
             border-bottom: 1px solid var(--border);
             margin-bottom: 1.5rem;
         }
-        
+
         .tab {
             padding: 0.75rem 1.25rem;
             background: none;
@@ -846,20 +844,20 @@ html_final = '''<!DOCTYPE html>
             border-bottom: 2px solid transparent;
             transition: all 0.2s;
         }
-        
+
         .tab.active {
             color: var(--primary);
             border-bottom-color: var(--primary);
         }
-        
+
         .tab-content {
             display: none;
         }
-        
+
         .tab-content.active {
             display: block;
         }
-        
+
         /* Debug Panel */
         .debug-panel {
             position: fixed;
@@ -874,11 +872,11 @@ html_final = '''<!DOCTYPE html>
             display: flex;
             flex-direction: column;
         }
-        
+
         .debug-panel.active {
             right: 0;
         }
-        
+
         .debug-header {
             padding: 1rem 1.5rem;
             border-bottom: 1px solid var(--border);
@@ -886,13 +884,13 @@ html_final = '''<!DOCTYPE html>
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .debug-content {
             flex: 1;
             overflow-y: auto;
             padding: 1rem;
         }
-        
+
         .debug-entry {
             padding: 0.5rem;
             margin-bottom: 0.5rem;
@@ -928,25 +926,25 @@ html_final = '''<!DOCTYPE html>
             <div class="card active-auction" id="activeAuctionCard" style="display: none;">
                 <span class="auction-badge">En Vivo</span>
                 <h2 class="auction-title" id="activeAuctionTitle">Título de la Subasta</h2>
-                
+
                 <!-- GALERÍA DE IMÁGENES -->
                 <div class="auction-images" id="auctionImages" style="display: none;">
                     <img src="" alt="Premio de subasta" class="auction-main-image" id="mainImage">
                     <div class="auction-thumbnails" id="thumbnailsContainer"></div>
                 </div>
-                
+
                 <div class="auction-timer" id="auctionTimer">00:00</div>
-                
+
                 <div class="current-bid">
                     <div class="bid-label">Puja Actual</div>
                     <div class="bid-amount" id="currentBidAmount">0 ₧</div>
                 </div>
-                
+
                 <div class="bid-winner">
                     <span class="bid-label">Ganador Actual:</span>
                     <span class="winner-name" id="currentWinner">Esperando pujas...</span>
                 </div>
-                
+
                 <div class="auction-actions">
                     <button class="btn btn-danger" onclick="endAuction()">Finalizar</button>
                     <button class="btn btn-secondary" onclick="extendAuction()">+1 Min</button>
@@ -1215,7 +1213,7 @@ html_final = '''<!DOCTYPE html>
             topBidder: null,
             topBidderAmount: 0
         };
-        
+
         const DEFAULT_CHANNEL = 'liiukiin';
         const AUCTION_DURATION = 300000; // 5 minutos en ms
 
@@ -1228,13 +1226,13 @@ html_final = '''<!DOCTYPE html>
             updateStats();
             renderLeaderboards();
             renderUserStats();
-            
+
             // Form submission
             document.getElementById('newAuctionForm').addEventListener('submit', function(e) {
                 e.preventDefault();
                 saveNewAuction();
             });
-            
+
             // Auto-conectar a Twitch
             setTimeout(() => connectToTwitchAuto(), 1000);
         });
@@ -1248,22 +1246,22 @@ html_final = '''<!DOCTYPE html>
                 addLog('Desconectado manualmente', 'system');
                 return;
             }
-            
+
             const channel = prompt('Ingresa el nombre del canal de Twitch:', DEFAULT_CHANNEL);
             if (!channel) return;
-            
+
             connectToTwitchAuto(channel);
         }
-        
+
         function connectToTwitchAuto(channel = DEFAULT_CHANNEL) {
             if (isConnected && ws) {
                 addLog(`Ya conectado a ${channel}`, 'info');
                 return;
             }
-            
+
             try {
                 ws = new WebSocket('wss://irc-ws.chat.twitch.tv:443');
-                
+
                 ws.onopen = () => {
                     ws.send('CAP REQ :twitch.tv/tags twitch.tv/commands twitch.tv/membership');
                     ws.send('PASS oauth:justinfan12345');
@@ -1272,18 +1270,18 @@ html_final = '''<!DOCTYPE html>
                     addLog(`Conectando al canal ${channel}...`, 'info');
                     debugLog(`Conectando a #${channel.toLowerCase()}`);
                 };
-                
+
                 ws.onmessage = (event) => {
                     handleIRCMessage(event.data);
                 };
-                
+
                 ws.onclose = () => {
                     isConnected = false;
                     updateConnectionStatus(false);
                     addLog('Desconectado de Twitch', 'error');
                     debugLog('Conexión cerrada');
                 };
-                
+
                 ws.onerror = (error) => {
                     addLog('Error de conexión', 'error');
                     debugLog(`Error: ${error}`);
@@ -1295,38 +1293,38 @@ html_final = '''<!DOCTYPE html>
                 console.error('Connection error:', error);
             }
         }
-        
+
         function handleIRCMessage(rawMessage) {
             debugLog(`IRC: ${rawMessage.substring(0, 100)}`);
-            
+
             if (rawMessage.includes('PING')) {
                 ws.send('PONG :tmi.twitch.tv');
                 debugLog('PONG enviado');
                 return;
             }
-            
+
             if (rawMessage.includes('Welcome, GLHF!') || rawMessage.includes('001')) {
                 isConnected = true;
                 updateConnectionStatus(true);
                 addLog(`Conectado exitosamente a ${DEFAULT_CHANNEL}`, 'success');
                 debugLog('Conexión establecida correctamente');
             }
-            
+
             if (rawMessage.includes('PRIVMSG')) {
                 parsePrivMsg(rawMessage);
             }
         }
-        
+
         function parsePrivMsg(rawMessage) {
             try {
                 debugLog(`Parseando: ${rawMessage}`);
-                
+
                 let username = null;
                 const userPatterns = [
                     /:(.+?)!/,
                     /display-name=([^;]+)/i,
                 ];
-                
+
                 for (const pattern of userPatterns) {
                     const match = rawMessage.match(pattern);
                     if (match && match[1]) {
@@ -1334,13 +1332,13 @@ html_final = '''<!DOCTYPE html>
                         break;
                     }
                 }
-                
+
                 let message = null;
                 const messagePatterns = [
                     /PRIVMSG #[^ ]+ :(.+)/,
                     /PRIVMSG #[^ ]+ (.+)/
                 ];
-                
+
                 for (const pattern of messagePatterns) {
                     const match = rawMessage.match(pattern);
                     if (match && match[1]) {
@@ -1348,18 +1346,18 @@ html_final = '''<!DOCTYPE html>
                         break;
                     }
                 }
-                
+
                 if (!username || !message) {
                     debugLog('No se pudo extraer usuario o mensaje');
                     return;
                 }
-                
+
                 debugLog(`Usuario: ${username}, Mensaje: ${message}`);
-                
+
                 const badgesMatch = rawMessage.match(/badges=([^;]+)/);
                 const badges = badgesMatch ? badgesMatch[1].split(',').map(b => b.split('/')[0]) : [];
                 debugLog(`Badges: ${badges.join(', ') || 'ninguno'}`);
-                
+
                 if (!chatUsers[username]) {
                     chatUsers[username] = {
                         messageCount: 0,
@@ -1367,14 +1365,14 @@ html_final = '''<!DOCTYPE html>
                         badges: []
                     };
                 }
-                
+
                 chatUsers[username].messageCount++;
                 chatUsers[username].badges = badges;
                 chatUsers[username].lastSeen = new Date();
-                
-                const bidPattern = /!(\\d+)/;
+
+                const bidPattern = /!(\d+)/;
                 const match = message.match(bidPattern);
-                
+
                 if (match && match[1]) {
                     const bidAmount = parseInt(match[1]);
                     debugLog(`Puja detectada: ${bidAmount}`);
@@ -1387,46 +1385,46 @@ html_final = '''<!DOCTYPE html>
                 console.error('Error parseando PRIVMSG:', error);
             }
         }
-        
+
         function processBid(username, amount, badges) {
             debugLog(`Procesando puja: ${username} - ${amount}`);
-            
+
             if (!currentAuction) {
                 addLog(`@${username}: ${amount} ₧ - Sin subasta activa`, 'error');
                 debugLog('No hay subasta activa');
                 return;
             }
-            
+
             if (restrictions.maxBid && amount > restrictions.maxBid) {
                 addLog(`@${username}: ${amount} ₧ - Supera el máximo permitido (${restrictions.maxBid} ₧)`, 'error');
                 debugLog(`Puja supera máximo: ${amount} > ${restrictions.maxBid}`);
                 return;
             }
-            
+
             const validationResult = validateBidder(username, badges);
             if (!validationResult.valid) {
                 addLog(`@${username}: ${amount} ₧ - ${validationResult.reason}`, 'error');
                 debugLog(`Validación fallida: ${validationResult.reason}`);
                 return;
             }
-            
+
             const currentHighest = currentAuction.currentBid || currentAuction.startingPrice;
             if (amount <= currentHighest) {
                 addLog(`@${username}: ${amount} ₧ - Muy baja (actual: ${currentHighest} ₧)`, 'error');
                 debugLog(`Puja muy baja: ${amount} <= ${currentHighest}`);
                 return;
             }
-            
+
             const bid = {
                 username,
                 amount,
                 timestamp: new Date(),
                 auctionId: currentAuction.id
             };
-            
+
             if (!allBids[currentAuction.id]) allBids[currentAuction.id] = [];
             allBids[currentAuction.id].push(bid);
-            
+
             // ACTUALIZAR ESTADÍSTICAS DEL USUARIO
             if (!userStats[username]) {
                 userStats[username] = {
@@ -1438,60 +1436,60 @@ html_final = '''<!DOCTYPE html>
                     bidHistory: []
                 };
             }
-            
+
             userStats[username].totalBids++;
             userStats[username].bidHistory.push({
                 amount,
                 auctionTitle: currentAuction.title,
                 timestamp: new Date()
             });
-            
+
             if (amount > userStats[username].highestBid) {
                 userStats[username].highestBid = amount;
             }
-            
+
             // Marcar participación en esta subasta
             const participated = userStats[username].bidHistory.filter(b => b.auctionTitle === currentAuction.title).length;
             if (participated === 1) {
                 userStats[username].auctionsParticipated++;
             }
-            
+
             saveUserStats();
-            
+
             currentAuction.currentBid = amount;
             currentAuction.currentWinner = username;
             currentAuction.bidCount = (currentAuction.bidCount || 0) + 1;
-            
+
             document.getElementById('currentBidAmount').textContent = amount + ' ₧';
             document.getElementById('currentWinner').textContent = username;
-            
+
             globalStats.totalBids++;
             globalStats.uniqueBidders.add(username);
-            
+
             if (amount > globalStats.topBidderAmount) {
                 globalStats.topBidder = username;
                 globalStats.topBidderAmount = amount;
             }
-            
+
             updateStats();
             addLog(`<span class="log-user">@${username}</span> pujó <strong>${amount} ₧</strong>`, 'bid');
             debugLog(`Puja aceptada: ${username} - ${amount}`);
         }
-        
+
         function validateBidder(username, badges) {
             debugLog(`Validando usuario: ${username}`);
-            
+
             if (restrictions.subscribersOnly) {
                 const isSubscriber = badges.includes('subscriber') || badges.includes('founder') || badges.includes('broadcaster');
                 if (!isSubscriber) {
                     return { valid: false, reason: 'Solo suscriptores pueden pujar' };
                 }
             }
-            
+
             if (restrictions.followersOnly) {
                 const isTrustedUser = badges.includes('broadcaster') || badges.includes('moderator') || 
                                      badges.includes('subscriber') || badges.includes('founder') || badges.includes('vip');
-                
+
                 if (!isTrustedUser) {
                     if (chatUsers[username] && chatUsers[username].messageCount < 2) {
                         return { valid: false, reason: 'Solo seguidores del canal pueden pujar' };
@@ -1500,23 +1498,23 @@ html_final = '''<!DOCTYPE html>
                     }
                 }
             }
-            
+
             if (restrictions.minMessages) {
                 const userMessages = chatUsers[username]?.messageCount || 0;
                 if (userMessages < restrictions.minMessages) {
                     return { valid: false, reason: `Se requieren al menos ${restrictions.minMessages} mensajes (tienes ${userMessages})` };
                 }
             }
-            
+
             debugLog('Validación exitosa');
             return { valid: true };
         }
-        
+
         function updateConnectionStatus(connected) {
             const indicator = document.getElementById('statusDot');
             const text = document.getElementById('statusText');
             const btn = document.getElementById('connectBtn');
-            
+
             if (connected) {
                 indicator.classList.add('connected');
                 text.textContent = `Conectado a ${DEFAULT_CHANNEL}`;
@@ -1538,35 +1536,35 @@ html_final = '''<!DOCTYPE html>
                 startTime: Date.now(),
                 endTime: Date.now() + AUCTION_DURATION
             };
-            
+
             allBids[auction.id] = [];
-            
+
             document.getElementById('activeAuctionTitle').textContent = auction.title;
             document.getElementById('currentBidAmount').textContent = auction.startingPrice + ' ₧';
             document.getElementById('currentWinner').textContent = 'Esperando pujas...';
-            
+
             displayAuctionImages(auction.images);
-            
+
             document.getElementById('activeAuctionCard').style.display = 'block';
             document.getElementById('noAuctionCard').style.display = 'none';
-            
+
             startTimer();
             addLog(`📢 Nueva subasta iniciada: ${auction.title}`, 'system');
         }
-        
+
         function displayAuctionImages(images) {
             const imagesContainer = document.getElementById('auctionImages');
             const mainImage = document.getElementById('mainImage');
             const thumbnailsContainer = document.getElementById('thumbnailsContainer');
-            
+
             if (!images || images.length === 0) {
                 imagesContainer.style.display = 'none';
                 return;
             }
-            
+
             imagesContainer.style.display = 'block';
             mainImage.src = images[0];
-            
+
             thumbnailsContainer.innerHTML = '';
             images.forEach((imgSrc, index) => {
                 const thumb = document.createElement('img');
@@ -1583,7 +1581,7 @@ html_final = '''<!DOCTYPE html>
 
         function endAuction() {
             if (!currentAuction) return;
-            
+
             if (confirm('¿Finalizar la subasta actual?')) {
                 handleAuctionEnd();
             }
@@ -1598,7 +1596,7 @@ html_final = '''<!DOCTYPE html>
 
         function handleAuctionEnd() {
             if (!currentAuction) return;
-            
+
             const bids = allBids[currentAuction.id] || [];
             const auction = {
                 ...currentAuction,
@@ -1614,7 +1612,7 @@ html_final = '''<!DOCTYPE html>
                 maxBid: bids.length > 0 ? Math.max(...bids.map(b => b.amount)) : currentAuction.startingPrice,
                 minBid: bids.length > 0 ? Math.min(...bids.map(b => b.amount)) : currentAuction.startingPrice
             };
-            
+
             // Actualizar stats del ganador
             if (auction.winner && userStats[auction.winner]) {
                 userStats[auction.winner].auctionsWon++;
@@ -1623,20 +1621,20 @@ html_final = '''<!DOCTYPE html>
                 renderLeaderboards();
                 renderUserStats();
             }
-            
+
             auctionHistory.unshift(auction);
             saveAuctionHistory();
-            
+
             globalStats.totalAuctions++;
             globalStats.totalPesetas += auction.finalBid;
             updateStats();
-            
+
             if (auction.winner) {
                 addLog(`🏆 Subasta finalizada. Ganador: <span class="log-user">@${auction.winner}</span> con <strong>${auction.finalBid} ₧</strong>`, 'winner');
             } else {
                 addLog(`📢 Subasta finalizada sin pujas`, 'system');
             }
-            
+
             currentAuction = null;
             stopTimer();
             showNoAuction();
@@ -1651,26 +1649,26 @@ html_final = '''<!DOCTYPE html>
         // Timer
         function startTimer() {
             if (timerInterval) clearInterval(timerInterval);
-            
+
             timerInterval = setInterval(() => {
                 if (!currentAuction) {
                     stopTimer();
                     return;
                 }
-                
+
                 const remaining = Math.max(0, currentAuction.endTime - Date.now());
                 const minutes = Math.floor(remaining / 60000);
                 const seconds = Math.floor((remaining % 60000) / 1000);
-                
+
                 const timerEl = document.getElementById('auctionTimer');
                 timerEl.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-                
+
                 if (remaining <= 30000) {
                     timerEl.classList.add('warning');
                 } else {
                     timerEl.classList.remove('warning');
                 }
-                
+
                 if (remaining === 0) {
                     handleAuctionEnd();
                 }
@@ -1689,17 +1687,17 @@ html_final = '''<!DOCTYPE html>
             const logContainer = document.getElementById('activityLog');
             const entry = document.createElement('div');
             entry.className = `log-entry ${type}`;
-            
+
             const time = new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
             entry.innerHTML = `<span class="log-time">[${time}]</span> ${message}`;
-            
+
             // Insertar al PRINCIPIO del contenedor
             if (logContainer.firstChild) {
                 logContainer.insertBefore(entry, logContainer.firstChild);
             } else {
                 logContainer.appendChild(entry);
             }
-            
+
             // Limitar a 100 entradas
             while (logContainer.children.length > 100) {
                 logContainer.removeChild(logContainer.lastChild);
@@ -1718,7 +1716,7 @@ html_final = '''<!DOCTYPE html>
             document.getElementById('totalPesetas').textContent = globalStats.totalPesetas + ' ₧';
             document.getElementById('uniqueBidders').textContent = globalStats.uniqueBidders.size;
             document.getElementById('topBidder').textContent = globalStats.topBidder || '-';
-            
+
             const avgBid = globalStats.totalBids > 0 ? Math.round(globalStats.totalPesetas / globalStats.totalBids) : 0;
             document.getElementById('avgBid').textContent = avgBid;
         }
@@ -1726,50 +1724,50 @@ html_final = '''<!DOCTYPE html>
         // Leaderboards
         function renderLeaderboards() {
             const users = Object.entries(userStats);
-            
+
             if (users.length === 0) {
                 document.getElementById('emptyLeaderboards').style.display = 'block';
                 return;
             }
-            
+
             document.getElementById('emptyLeaderboards').style.display = 'none';
-            
+
             // Más pujas ganadas
             const winsLeaderboard = users
                 .sort((a, b) => b[1].auctionsWon - a[1].auctionsWon)
                 .slice(0, 10);
-            
+
             renderLeaderboardTable('winsLeaderboard', winsLeaderboard, 'auctionsWon');
-            
+
             // Más pesetas gastadas
             const spentLeaderboard = users
                 .sort((a, b) => b[1].totalSpent - a[1].totalSpent)
                 .slice(0, 10);
-            
+
             renderLeaderboardTable('spentLeaderboard', spentLeaderboard, 'totalSpent', true);
-            
+
             // Más pujas participadas
             const participationLeaderboard = users
                 .sort((a, b) => b[1].auctionsParticipated - a[1].auctionsParticipated)
                 .slice(0, 10);
-            
+
             renderLeaderboardTable('participationLeaderboard', participationLeaderboard, 'auctionsParticipated');
         }
-        
+
         function renderLeaderboardTable(tableId, data, statKey, isPesetas = false) {
             const tbody = document.querySelector(`#${tableId} tbody`);
             tbody.innerHTML = '';
-            
+
             data.forEach(([username, stats], index) => {
                 const row = document.createElement('tr');
                 const rankClass = index === 0 ? 'gold' : index === 1 ? 'silver' : index === 2 ? 'bronze' : '';
-                
+
                 row.innerHTML = `
                     <td class="leaderboard-rank ${rankClass}">${index + 1}</td>
                     <td class="leaderboard-username">${username}</td>
                     <td class="leaderboard-value">${stats[statKey]}${isPesetas ? ' ₧' : ''}</td>
                 `;
-                
+
                 tbody.appendChild(row);
             });
         }
@@ -1778,15 +1776,15 @@ html_final = '''<!DOCTYPE html>
         function renderUserStats() {
             const container = document.getElementById('userStatsList');
             const emptyState = document.getElementById('emptyUsers');
-            
+
             const users = Object.entries(userStats).sort((a, b) => b[1].totalBids - a[1].totalBids);
-            
+
             if (users.length === 0) {
                 container.innerHTML = '';
                 emptyState.style.display = 'block';
                 return;
             }
-            
+
             emptyState.style.display = 'none';
             container.innerHTML = users.map(([username, stats]) => `
                 <div class="user-stats-card" onclick="showUserDetails('${username}')">
@@ -1815,15 +1813,15 @@ html_final = '''<!DOCTYPE html>
                 </div>
             `).join('');
         }
-        
+
         function showUserDetails(username) {
             const stats = userStats[username];
             if (!stats) return;
-            
+
             document.getElementById('userDetailsTitle').textContent = `@${username} - Detalles`;
-            
+
             const recentBids = stats.bidHistory.slice(-10).reverse();
-            
+
             const detailsHTML = `
                 <div class="user-stats-grid" style="margin-bottom: 1.5rem;">
                     <div class="history-detail">
@@ -1851,7 +1849,7 @@ html_final = '''<!DOCTYPE html>
                         <span class="detail-value">${stats.totalBids > 0 ? Math.round(stats.totalSpent / stats.totalBids) : 0} ₧</span>
                     </div>
                 </div>
-                
+
                 <h4 style="margin-bottom: 1rem; color: var(--text);">Historial Reciente (últimas 10 pujas)</h4>
                 ${recentBids.map(bid => `
                     <div class="history-item" style="margin-bottom: 0.5rem; padding: 0.75rem;">
@@ -1865,11 +1863,11 @@ html_final = '''<!DOCTYPE html>
                     </div>
                 `).join('')}
             `;
-            
+
             document.getElementById('userDetailsBody').innerHTML = detailsHTML;
             document.getElementById('userDetailsModal').classList.add('active');
         }
-        
+
         function closeUserDetailsModal() {
             document.getElementById('userDetailsModal').classList.remove('active');
         }
@@ -1889,11 +1887,11 @@ html_final = '''<!DOCTYPE html>
             const input = document.getElementById('auctionImagesInput');
             const grid = document.getElementById('imagePreviewGrid');
             grid.innerHTML = '';
-            
+
             for (let i = 0; i < input.files.length; i++) {
                 const file = input.files[i];
                 const reader = new FileReader();
-                
+
                 reader.onload = function(e) {
                     const preview = document.createElement('div');
                     preview.className = 'image-preview';
@@ -1903,7 +1901,7 @@ html_final = '''<!DOCTYPE html>
                     `;
                     grid.appendChild(preview);
                 };
-                
+
                 reader.readAsDataURL(file);
             }
         }
@@ -1911,13 +1909,13 @@ html_final = '''<!DOCTYPE html>
         function removeImage(index) {
             const input = document.getElementById('auctionImagesInput');
             const dt = new DataTransfer();
-            
+
             for (let i = 0; i < input.files.length; i++) {
                 if (i !== index) {
                     dt.items.add(input.files[i]);
                 }
             }
-            
+
             input.files = dt.files;
             previewImages();
         }
@@ -1925,12 +1923,12 @@ html_final = '''<!DOCTYPE html>
         function saveNewAuction() {
             const input = document.getElementById('auctionImagesInput');
             const images = [];
-            
+
             const previews = document.querySelectorAll('#imagePreviewGrid img');
             previews.forEach(img => {
                 images.push(img.src);
             });
-            
+
             const auction = {
                 id: Date.now(),
                 title: document.getElementById('auctionTitle').value,
@@ -1939,12 +1937,12 @@ html_final = '''<!DOCTYPE html>
                 images: images,
                 createdAt: new Date()
             };
-            
+
             configuredAuctions.push(auction);
             saveConfiguredAuctions();
             renderConfiguredAuctions();
             closeNewAuctionModal();
-            
+
             addLog(`✅ Subasta "${auction.title}" guardada`, 'system');
             switchTab({ target: document.querySelectorAll('.tab')[1] }, 'configured');
         }
@@ -1953,13 +1951,13 @@ html_final = '''<!DOCTYPE html>
         function renderConfiguredAuctions() {
             const container = document.getElementById('configuredAuctionsList');
             const emptyState = document.getElementById('emptyConfigured');
-            
+
             if (configuredAuctions.length === 0) {
                 container.innerHTML = '';
                 emptyState.style.display = 'block';
                 return;
             }
-            
+
             emptyState.style.display = 'none';
             container.innerHTML = configuredAuctions.map(auction => `
                 <div class="auction-card">
@@ -1987,17 +1985,17 @@ html_final = '''<!DOCTYPE html>
         function renderHistory() {
             const container = document.getElementById('historyList');
             const emptyState = document.getElementById('emptyHistory');
-            
+
             if (auctionHistory.length === 0) {
                 container.innerHTML = '';
                 emptyState.style.display = 'block';
                 return;
             }
-            
+
             emptyState.style.display = 'none';
             container.innerHTML = auctionHistory.map(auction => {
                 const duration = auction.duration ? formatDuration(auction.duration) : 'N/A';
-                
+
                 return `
                     <div class="history-item">
                         <div class="history-header">
@@ -2037,7 +2035,7 @@ html_final = '''<!DOCTYPE html>
                 `;
             }).join('');
         }
-        
+
         function formatDuration(ms) {
             const minutes = Math.floor(ms / 60000);
             const seconds = Math.floor((ms % 60000) / 1000);
@@ -2048,7 +2046,7 @@ html_final = '''<!DOCTYPE html>
         function switchTab(event, tabName) {
             document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
             event.target.classList.add('active');
-            
+
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             document.getElementById(tabName + 'Tab').classList.add('active');
         }
@@ -2065,7 +2063,7 @@ html_final = '''<!DOCTYPE html>
             const time = new Date().toLocaleTimeString();
             entry.textContent = `[${time}] ${message}`;
             debugContent.insertBefore(entry, debugContent.firstChild);
-            
+
             while (debugContent.children.length > 50) {
                 debugContent.removeChild(debugContent.lastChild);
             }
@@ -2082,14 +2080,14 @@ html_final = '''<!DOCTYPE html>
                 history: auctionHistory,
                 exportDate: new Date()
             };
-            
+
             const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
             a.download = `stats_${Date.now()}.json`;
             a.click();
-            
+
             addLog('📊 Estadísticas exportadas', 'system');
         }
 
@@ -2100,7 +2098,7 @@ html_final = '''<!DOCTYPE html>
             restrictions.subscribersOnly = config.subscribersOnly || false;
             restrictions.minMessages = config.minMessages || 0;
             restrictions.maxBid = config.maxBid || 0;
-            
+
             document.getElementById('followersOnly').checked = restrictions.followersOnly;
             document.getElementById('subscribersOnly').checked = restrictions.subscribersOnly;
             document.getElementById('minMessages').value = restrictions.minMessages;
@@ -2112,7 +2110,7 @@ html_final = '''<!DOCTYPE html>
             restrictions.subscribersOnly = document.getElementById('subscribersOnly').checked;
             restrictions.minMessages = parseInt(document.getElementById('minMessages').value) || 0;
             restrictions.maxBid = parseInt(document.getElementById('maxBid').value) || 0;
-            
+
             localStorage.setItem('auctionConfig', JSON.stringify(restrictions));
         }
 
@@ -2132,12 +2130,12 @@ html_final = '''<!DOCTYPE html>
             const data = localStorage.getItem('auctionHistory');
             if (data) {
                 auctionHistory = JSON.parse(data);
-                
+
                 auctionHistory.forEach(auction => {
                     globalStats.totalAuctions++;
                     globalStats.totalPesetas += auction.finalBid;
                     globalStats.totalBids += auction.totalBids || 0;
-                    
+
                     if (auction.bids) {
                         auction.bids.forEach(bid => {
                             globalStats.uniqueBidders.add(bid.username);
@@ -2148,7 +2146,7 @@ html_final = '''<!DOCTYPE html>
                         });
                     }
                 });
-                
+
                 renderHistory();
                 updateStats();
             }
@@ -2157,14 +2155,14 @@ html_final = '''<!DOCTYPE html>
         function saveAuctionHistory() {
             localStorage.setItem('auctionHistory', JSON.stringify(auctionHistory));
         }
-        
+
         function loadUserStats() {
             const data = localStorage.getItem('userStats');
             if (data) {
                 userStats = JSON.parse(data);
             }
         }
-        
+
         function saveUserStats() {
             localStorage.setItem('userStats', JSON.stringify(userStats));
         }
@@ -2176,40 +2174,4 @@ html_final = '''<!DOCTYPE html>
         document.getElementById('maxBid').addEventListener('change', saveConfiguration);
     </script>
 </body>
-</html>'''
-
-with open('subasta_twitch_DEFINITIVA.html', 'w', encoding='utf-8') as f:
-    f.write(html_final)
-
-print("✅ Archivo HTML FINAL creado: subasta_twitch_DEFINITIVA.html")
-print("\n🎯 TODAS LAS MEJORAS IMPLEMENTADAS:")
-print("=" * 70)
-print("\n1. 📋 LOGS CORREGIDOS:")
-print("   ✓ Los logs más recientes aparecen en la PARTE SUPERIOR")
-print("   ✓ Cambiado flex-direction de column-reverse a column")
-print("   ✓ insertBefore() para añadir al principio")
-print("   ✓ Animación desde arriba (translateY)")
-print("\n2. 📊 HISTORIAL COMPLETO DE USUARIOS:")
-print("   ✓ Pestaña 'Usuarios' con stats detalladas")
-print("   ✓ Total de pujas por usuario")
-print("   ✓ Pesetas gastadas totales")
-print("   ✓ Subastas ganadas")
-print("   ✓ Subastas participadas")
-print("   ✓ Puja máxima personal")
-print("   ✓ Click en usuario para ver detalles completos")
-print("   ✓ Historial de últimas 10 pujas con fecha")
-print("\n3. 🏆 TABLA DE LÍDERES:")
-print("   ✓ Pestaña 'Tabla de Líderes' dedicada")
-print("   ✓ Top 10 con más pujas ganadas")
-print("   ✓ Top 10 con más pesetas gastadas")
-print("   ✓ Top 10 con más pujas participadas")
-print("   ✓ Medallas oro/plata/bronce para primeros 3")
-print("   ✓ Diseño de tabla profesional")
-print("\n4. 💾 PERSISTENCIA:")
-print("   ✓ Todas las stats se guardan en localStorage")
-print("   ✓ Se mantienen entre sesiones")
-print("   ✓ Exportación incluye stats de usuarios")
-print("\n5. ✨ CARACTERÍSTICAS ADICIONALES:")
-print("   ✓ Modal con detalles completos del usuario")
-print("   ✓ Stats se actualizan en tiempo real")
-print("   ✓ Diseño coherente con el resto de la app")
+</html>
